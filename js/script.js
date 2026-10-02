@@ -1,6 +1,6 @@
 /* =========================================================
-   DEVGUIA — SCRIPT.JS (Lógica Principal da Aplicação)
-========================================================= */
+   DEVGUIA — SCRIPT.JS (Lógica Principal Unificada)
+   ========================================================= */
 
 "use strict";
 
@@ -12,6 +12,7 @@
       this.initHtmlSearch();
       this.initCategoryFilters();
       this.initCssSearch();
+      this.initCssCategoryFilters();
       this.initExampleFilters();
       this.initChallengeFilters();
       this.initCopyButtons();
@@ -22,7 +23,9 @@
       this.updateYear();
     },
 
-    /* NAVEGAÇÃO MOBILE */
+    /* =========================================================
+       1. NAVEGAÇÃO MOBILE
+       ========================================================= */
     initMobileMenu() {
       const toggle = document.getElementById("menuToggle") || document.querySelector(".menu-button");
       const nav = document.getElementById("mainNav") || document.querySelector(".nav-links");
@@ -46,7 +49,9 @@
       });
     },
 
-    /* CARREGAMENTO DE TAGS HTML */
+    /* =========================================================
+       2. RENDERIZAÇÃO DE TAGS HTML (INDEX.HTML)
+       ========================================================= */
     initHtmlTags() {
       const container = document.getElementById("htmlTagsContainer");
       if (!container) return;
@@ -55,8 +60,8 @@
         console.error("DevGuia: html-tags.js não foi carregado corretamente.");
         container.innerHTML = `
           <div class="error-message">
-            <h3>Não foi possível carregar as tags</h3>
-            <p>Verifique se html-tags.js é carregado antes do script principal.</p>
+            <p>Não foi possível carregar as tags HTML.</p>
+            <small>Verifique se html-tags.js foi carregado antes do script principal.</small>
           </div>
         `;
         return;
@@ -90,17 +95,19 @@
         card.dataset.name = tag.name || "";
 
         card.innerHTML = `
-          <header class="card-header">
-            <span class="tag-badge">&lt;${this.escapeHtml(tag.name)}&gt;</span>
-            <span class="category-badge">${this.escapeHtml(this.formatCategory(tag.category))}</span>
-          </header>
-          <h3>${this.escapeHtml(tag.title || tag.name)}</h3>
-          <p>${this.escapeHtml(tag.description || "Sem descrição disponível.")}</p>
-          <pre><code>${this.escapeHtml(tag.syntax || `<${tag.name}>`)}</code></pre>
-          <footer class="card-footer">
-            <button class="secondary-button btn-details">Ver Detalhes</button>
-            <button class="copy-button">Copiar Sintaxe</button>
-          </footer>
+          <div class="card-header">
+            <span class="tag-name">&lt;${this.escapeHtml(tag.name)}&gt;</span>
+            <span class="tag-category">${this.escapeHtml(this.formatCategory(tag.category))}</span>
+          </div>
+          <h3 class="card-title">${this.escapeHtml(tag.title || tag.name)}</h3>
+          <p class="card-description">${this.escapeHtml(tag.description || "Sem descrição disponível.")}</p>
+          <div class="code-preview">
+            <code>${this.escapeHtml(tag.syntax || `<${tag.name}>`)}</code>
+          </div>
+          <div class="card-actions">
+            <button type="button" class="btn-details">Detalhes</button>
+            <button type="button" class="copy-button" data-copy-code="${this.escapeHtml(tag.syntax || `<${tag.name}>`)}">Copiar</button>
+          </div>
         `;
 
         card.querySelector(".btn-details").addEventListener("click", () => this.openTagModal(tag));
@@ -113,7 +120,9 @@
       this.updateResultsCount(tags.length);
     },
 
-    /* BUSCA E FILTROS DE TAGS HTML (INDEX.HTML) */
+    /* =========================================================
+       3. BUSCA E FILTROS DE HTML (INDEX.HTML)
+       ========================================================= */
     initHtmlSearch() {
       const input = document.getElementById("searchInput");
       if (!input) return;
@@ -124,7 +133,6 @@
     filterHtml() {
       const input = document.getElementById("searchInput");
       const container = document.getElementById("htmlTagsContainer");
-
       if (!container) return;
 
       const term = input ? input.value.trim().toLowerCase() : "";
@@ -152,7 +160,7 @@
     },
 
     initCategoryFilters() {
-      const buttons = document.querySelectorAll("#categoryFilters [data-category], .category-filters [data-category], .filters [data-category]");
+      const buttons = document.querySelectorAll("#categoryFilters [data-category], .category-filters [data-category]");
       if (!buttons.length) return;
 
       buttons.forEach(button => {
@@ -169,29 +177,57 @@
       if (noResults) noResults.hidden = count !== 0;
     },
 
-    /* BUSCA CSS (CSS.HTML) */
+    /* =========================================================
+       4. BUSCA E FILTROS DE CSS (CSS.HTML)
+       ========================================================= */
     initCssSearch() {
       const input = document.getElementById("cssSearchInput");
       if (!input) return;
 
-      input.addEventListener("input", () => {
-        const term = input.value.trim().toLowerCase();
-        const cards = document.querySelectorAll(".css-card, .card");
-        let visible = 0;
+      input.addEventListener("input", () => this.filterCss());
+    },
 
-        cards.forEach(card => {
-          const show = !term || card.textContent.toLowerCase().includes(term);
-          card.style.display = show ? "" : "none";
-          card.hidden = !show;
+    initCssCategoryFilters() {
+      const buttons = document.querySelectorAll("[data-css-category]");
+      if (!buttons.length) return;
 
-          if (show) visible++;
+      buttons.forEach(button => {
+        button.addEventListener("click", () => {
+          buttons.forEach(item => item.classList.remove("active"));
+          button.classList.add("active");
+          this.filterCss();
         });
-
-        this.updateResultsCount(visible);
       });
     },
 
-    /* FILTROS DE EXEMPLOS (EXEMPLOS.HTML) */
+    filterCss() {
+      const input = document.getElementById("cssSearchInput");
+      const term = input ? input.value.trim().toLowerCase() : "";
+      const activeFilter = document.querySelector("[data-css-category].active");
+      const category = activeFilter?.dataset.cssCategory || "todos";
+
+      const cards = document.querySelectorAll(".css-card");
+      let visible = 0;
+
+      cards.forEach(card => {
+        const text = card.textContent.toLowerCase();
+        const matchesText = !term || text.includes(term);
+        const cardCategory = card.dataset.cssCategory || "";
+        const matchesCategory = category === "todos" || cardCategory === category;
+
+        const show = matchesText && matchesCategory;
+        card.style.display = show ? "" : "none";
+        card.hidden = !show;
+
+        if (show) visible++;
+      });
+
+      this.updateResultsCount(visible);
+    },
+
+    /* =========================================================
+       5. FILTROS DE EXEMPLOS (EXEMPLOS.HTML)
+       ========================================================= */
     initExampleFilters() {
       const buttons = document.querySelectorAll("[data-example], [data-example-filter]");
       if (!buttons.length) return;
@@ -220,7 +256,9 @@
       });
     },
 
-    /* FILTROS DE DESAFIOS (DESAFIOS.HTML) */
+    /* =========================================================
+       6. FILTROS DE DESAFIOS (DESAFIOS.HTML)
+       ========================================================= */
     initChallengeFilters() {
       const buttons = document.querySelectorAll("[data-difficulty], [data-difficulty-filter]");
       if (!buttons.length) return;
@@ -248,7 +286,9 @@
       });
     },
 
-    /* BOTÕES DE COPIAR CÓDIGO */
+    /* =========================================================
+       7. CÓPIA DE CÓDIGO
+       ========================================================= */
     initCopyButtons() {
       document.addEventListener("click", event => {
         const button = event.target.closest("[data-copy-code], .copy-button");
@@ -290,7 +330,9 @@
       }, 1500);
     },
 
-    /* MODAL DE DETALHES */
+    /* =========================================================
+       8. MODAL DE DETALHES DAS TAGS
+       ========================================================= */
     openTagModal(tag) {
       this.closeExistingModal();
 
@@ -303,18 +345,18 @@
       modal.setAttribute("aria-modal", "true");
 
       modal.innerHTML = `
-        <button class="devguia-modal-close" aria-label="Fechar modal">✕</button>
+        <button type="button" class="devguia-modal-close" aria-label="Fechar modal">✕</button>
         <div class="modal-header">
-          <span class="tag-badge">HTML &lt;${this.escapeHtml(tag.name)}&gt;</span>
+          <span class="badge">HTML &lt;${this.escapeHtml(tag.name)}&gt;</span>
           <h2>${this.escapeHtml(tag.title || "Tag HTML")}</h2>
         </div>
         <div class="modal-body">
           <p>${this.escapeHtml(tag.description || "Sem descrição disponível.")}</p>
-          <h4>Sintaxe</h4>
+          <h3>Sintaxe</h3>
           <pre><code>${this.escapeHtml(tag.syntax || "")}</code></pre>
-          <h4>Exemplo</h4>
+          <h3>Exemplo</h3>
           <pre><code>${this.escapeHtml(tag.example || "")}</code></pre>
-          ${tag.tip ? `<p class="tip-box">💡 <strong>Dica:</strong> ${this.escapeHtml(tag.tip)}</p>` : ""}
+          ${tag.tip ? `<p class="modal-tip">💡 <strong>Dica:</strong> ${this.escapeHtml(tag.tip)}</p>` : ""}
         </div>
       `;
 
@@ -375,7 +417,9 @@
       }, 2200);
     },
 
-    /* LABORATÓRIO E PRÉ-VISUALIZAÇÃO DE CÓDIGO */
+    /* =========================================================
+       9. LABORATÓRIO (LABORATORIO.HTML)
+       ========================================================= */
     initLaboratory() {
       const htmlEditor = document.getElementById("htmlCode");
       const cssEditor = document.getElementById("cssCode");
@@ -409,6 +453,7 @@
       this.initEditorTabs();
       this.initEditor(htmlEditor, "htmlLineNumbers");
       this.initEditor(cssEditor, "cssLineNumbers");
+
       run();
     },
 
@@ -467,7 +512,6 @@
       this.updateLineNumbers(textarea, lineNumbersId);
 
       textarea.addEventListener("input", () => this.updateLineNumbers(textarea, lineNumbersId));
-
       textarea.addEventListener("scroll", () => {
         const numbers = document.getElementById(lineNumbersId);
         if (numbers) numbers.scrollTop = textarea.scrollTop;
@@ -479,8 +523,8 @@
           const start = textarea.selectionStart;
           const end = textarea.selectionEnd;
 
-          textarea.value = textarea.value.slice(0, start) + "    " + textarea.value.slice(end);
-          textarea.selectionStart = textarea.selectionEnd = start + 4;
+          textarea.value = textarea.value.slice(0, start) + "  " + textarea.value.slice(end);
+          textarea.selectionStart = textarea.selectionEnd = start + 2;
 
           textarea.dispatchEvent(new Event("input"));
         }
@@ -492,10 +536,12 @@
       if (!numbers || !textarea) return;
 
       const total = textarea.value.split("\n").length;
-      numbers.innerHTML = Array.from({ length: total }, (_, i) => `${i + 1}`).join("<br>");
+      numbers.innerHTML = Array.from({ length: total }, (_, i) => `<span>${i + 1}</span>`).join("");
     },
 
-    /* MODO DESAFIO */
+    /* =========================================================
+       10. MODO DESAFIO E RECURSOS EXTRAS
+       ========================================================= */
     initChallengeMode() {
       const panel = document.getElementById("challengePanel");
       if (!panel) return;
@@ -525,7 +571,6 @@
       panel.hidden = false;
     },
 
-    /* UTILITÁRIOS DIVERSOS */
     initFullscreen() {
       const button = document.getElementById("fullscreenPreview");
       const preview = document.getElementById("preview");
@@ -573,7 +618,7 @@
         texto: "Texto",
         midia: "Mídia",
         formularios: "Formulários",
-        semantica: "Semántica",
+        semantica: "Semântica",
         tabelas: "Tabelas",
         seletores: "Seletores",
         cores: "Cores",
