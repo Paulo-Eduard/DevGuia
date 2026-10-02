@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="DevGuia - Guia prático e interativo para aprender HTML e desenvolvimento web.">
+    <meta name="theme-color" content="#0b1120">
+    <title>DevGuia | Aprenda Desenvolvimento Web</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- CABEÇALHO -->
+    <header class="header">
+        <nav class="navbar">
+            <a href="index.html" class="logo" aria-label="DevGuia - Página inicial">
+                &lt;DevGuia /&gt;
+            </a>
+
+            <button type="button" id="menuToggle" class="menu-button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mainNav">
+                ☰
+            </button>
+
+            <ul id="mainNav" class="nav-links" aria-label="Navegação principal">
+                <li><a href="index.html" class="active">HTML</a></li>
+                <li><a href="css.html">CSS</a></li>
+                <li><a href="exemplos.html">Exemplos</a></li>
+                <li><a href="laboratorio.html">Laboratório</a></li>
+                <li><a href="desafios.html">Desafios</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main>
+        <!-- HERO -->
+        <section class="hero">
+            <div class="hero-content">
+                <span class="hero-badge">HTML5</span>
+                <h1>Aprenda HTML <span>de verdade.</span></h1>
+                <p>Um guia simples, prático e interativo para aprender HTML e construir suas primeiras páginas web.</p>
+                <div class="hero-actions" style="margin-top: 20px; display: flex; gap: 12px; justify-content: center;">
+                    <a href="#html-tags" class="primary-button">Começar a aprender</a>
+                    <a href="laboratorio.html" class="secondary-button">Abrir laboratório</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- BUSCA E TAGS -->
+        <section id="html-tags" class="content-section">
+            <div class="section-heading" style="text-align: center; margin-bottom: 25px;">
+                <span class="section-label">DOCUMENTAÇÃO</span>
+                <h2>Tags HTML</h2>
+                <p>Pesquise uma tag ou filtre por categoria para encontrar exatamente o que precisa.</p>
+            </div>
+
+            <div class="search-container">
+                <div class="search-box">
+                    <input type="search" id="searchInput" placeholder="Pesquisar tag, exemplo ou descrição..." autocomplete="off">
+                </div>
+            </div>
+
+            <!-- FILTROS -->
+            <div id="categoryFilters" class="category-filters" role="group" aria-label="Filtrar tags HTML">
+                <button type="button" class="category-button active" data-category="todos">Todas</button>
+                <button type="button" class="category-button" data-category="estrutura">Estrutura</button>
+                <button type="button" class="category-button" data-category="texto">Texto</button>
+                <button type="button" class="category-button" data-category="midia">Mídia</button>
+                <button type="button" class="category-button" data-category="formularios">Formulários</button>
+                <button type="button" class="category-button" data-category="semantica">Semântica</button>
+                <button type="button" class="category-button" data-category="tabelas">Tabelas</button>
+            </div>
+
+            <div class="results-info" style="text-align: center; margin-bottom: 20px;">
+                <span>Tags encontradas: </span>
+                <strong data-results-count>0</strong>
+            </div>
+
+            <!-- CONTAINER DE TAGS -->
+            <div id="htmlTagsContainer" class="grid">
+                <div class="loading-message"><span>Carregando tags...</span></div>
+            </div>
+
+            <div id="noResults" class="no-results" hidden>
+                <h3>Nenhuma tag encontrada</h3>
+                <p>Tente pesquisar outro termo ou escolher uma categoria diferente.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div>
+                <a href="index.html" class="logo">&lt;DevGuia /&gt;</a>
+                <p>Aprenda desenvolvimento web de forma simples, prática e interativa.</p>
+            </div>
+            <div class="footer-links">
+                <a href="index.html">HTML</a>
+                <a href="css.html">CSS</a>
+                <a href="exemplos.html">Exemplos</a>
+                <a href="laboratorio.html">Laboratório</a>
+                <a href="desafios.html">Desafios</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© <span data-current-year>2026</span> DevGuia. Feito para aprender.</p>
+        </div>
+    </footer>
+
+    <script src="./js/html-tags.js"></script>
+    <script src="./js/script.js"></script>
+</body>
+</html>

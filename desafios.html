@@ -1,0 +1,858 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="DevGuia — desafios de HTML e CSS para praticar desenvolvimento web.">
+
+    <title>DevGuia — Desafios</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         CABEÇALHO
+    ========================== -->
+
+    <header class="header">
+
+        <nav class="navbar">
+
+            <a href="index.html" class="logo">
+                &lt;DevGuia /&gt;
+            </a>
+
+            <ul class="nav-links">
+
+                <li>
+                    <a href="index.html">
+                        HTML
+                    </a>
+                </li>
+
+                <li>
+                    <a href="css.html">
+                        CSS
+                    </a>
+                </li>
+
+                <li>
+                    <a href="exemplos.html">
+                        Exemplos
+                    </a>
+                </li>
+
+                <li>
+                    <a href="laboratorio.html">
+                        Laboratório
+                    </a>
+                </li>
+
+                <li>
+                    <a href="desafios.html" class="active">
+                        Desafios
+                    </a>
+                </li>
+
+            </ul>
+
+            <button class="menu-button" aria-label="Abrir menu">
+                ☰
+            </button>
+
+        </nav>
+
+    </header>
+
+
+    <!-- =========================
+         CONTEÚDO PRINCIPAL
+    ========================== -->
+
+    <main>
+
+        <!-- =========================
+             HERO
+        ========================== -->
+
+        <section class="hero">
+
+            <span class="hero-badge">
+                DESAFIOS
+            </span>
+
+            <h1>
+                Aprenda praticando
+                <span>com desafios.</span>
+            </h1>
+
+            <p>
+                Coloque seus conhecimentos de HTML e CSS
+                à prova e evolua passo a passo.
+            </p>
+
+        </section>
+
+
+        <!-- =========================
+             PROGRESSO
+        ========================== -->
+
+        <section class="progress-section">
+
+            <div class="progress-card">
+
+                <div class="progress-info">
+
+                    <div>
+
+                        <span class="section-label">
+                            SEU PROGRESSO
+                        </span>
+
+                        <h2>
+                            Jornada Web
+                        </h2>
+
+                    </div>
+
+                    <span class="progress-number">
+                        0 / 6
+                    </span>
+
+                </div>
+
+
+                <div class="progress-bar">
+
+                    <div
+                        class="progress-fill"
+                        style="width: 0%;">
+                    </div>
+
+                </div>
+
+
+                <p>
+                    Complete os desafios para avançar
+                    na sua jornada de aprendizado.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             FILTROS
+        ========================== -->
+
+        <section class="categories">
+
+            <div class="section-header">
+
+                <div>
+
+                    <span class="section-label">
+                        PRATICAR
+                    </span>
+
+                    <h2>
+                        Escolha um desafio
+                    </h2>
+
+                </div>
+
+                <p>
+                    Comece pelos exercícios mais simples
+                    e avance conforme aprender.
+                </p>
+
+            </div>
+
+
+            <div class="category-list">
+
+                <button
+                    class="category-button active"
+                    data-difficulty="todos">
+
+                    Todos
+
+                </button>
+
+                <button
+                    class="category-button"
+                    data-difficulty="facil">
+
+                    Fácil
+
+                </button>
+
+                <button
+                    class="category-button"
+                    data-difficulty="medio">
+
+                    Médio
+
+                </button>
+
+                <button
+                    class="category-button"
+                    data-difficulty="dificil">
+
+                    Difícil
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             LISTA DE DESAFIOS
+        ========================== -->
+
+        <section class="challenges-grid">
+
+
+            <!-- =========================
+                 DESAFIO 01
+            ========================== -->
+
+            <article
+                class="challenge-card"
+                data-difficulty="facil">
+
+                <div class="challenge-top">
+
+                    <span class="challenge-number">
+                        #01
+                    </span>
+
+                    <span class="difficulty easy">
+                        Fácil
+                    </span>
+
+                </div>
+
+
+                <span class="challenge-type">
+                    HTML
+                </span>
+
+
+                <h2>
+                    Crie seu primeiro título
+                </h2>
+
+
+                <p>
+                    Crie uma página HTML contendo um título
+                    principal utilizando a tag
+                    <code>&lt;h1&gt;</code>.
+                </p>
+
+
+                <div class="challenge-objective">
+
+                    <strong>
+                        🎯 Objetivo
+                    </strong>
+
+                    <p>
+                        Aprender a utilizar a tag
+                        <code>&lt;h1&gt;</code>.
+                    </p>
+
+                </div>
+
+
+                <div class="challenge-tags">
+
+                    <span>
+                        HTML
+                    </span>
+
+                    <span>
+                        h1
+                    </span>
+
+                    <span>
+                        Texto
+                    </span>
+
+                </div>
+
+
+                <a
+                    href="laboratorio.html?desafio=1"
+                    class="challenge-button">
+
+                    Começar desafio →
+
+                </a>
+
+            </article>
+
+
+            <!-- =========================
+                 DESAFIO 02
+            ========================== -->
+
+            <article
+                class="challenge-card"
+                data-difficulty="facil">
+
+                <div class="challenge-top">
+
+                    <span class="challenge-number">
+                        #02
+                    </span>
+
+                    <span class="difficulty easy">
+                        Fácil
+                    </span>
+
+                </div>
+
+
+                <span class="challenge-type">
+                    HTML
+                </span>
+
+
+                <h2>
+                    Crie um cartão de apresentação
+                </h2>
+
+
+                <p>
+                    Crie um pequeno cartão contendo seu nome,
+                    uma descrição e uma imagem.
+                </p>
+
+
+                <div class="challenge-objective">
+
+                    <strong>
+                        🎯 Objetivo
+                    </strong>
+
+                    <p>
+                        Utilizar
+                        <code>&lt;h1&gt;</code>,
+                        <code>&lt;p&gt;</code> e
+                        <code>&lt;img&gt;</code>.
+                    </p>
+
+                </div>
+
+
+                <div class="challenge-tags">
+
+                    <span>
+                        HTML
+                    </span>
+
+                    <span>
+                        Imagem
+                    </span>
+
+                    <span>
+                        Texto
+                    </span>
+
+                </div>
+
+
+                <a
+                    href="laboratorio.html?desafio=2"
+                    class="challenge-button">
+
+                    Começar desafio →
+
+                </a>
+
+            </article>
+
+
+            <!-- =========================
+                 DESAFIO 03
+            ========================== -->
+
+            <article
+                class="challenge-card"
+                data-difficulty="facil">
+
+                <div class="challenge-top">
+
+                    <span class="challenge-number">
+                        #03
+                    </span>
+
+                    <span class="difficulty easy">
+                        Fácil
+                    </span>
+
+                </div>
+
+
+                <span class="challenge-type">
+                    HTML
+                </span>
+
+
+                <h2>
+                    Crie um formulário
+                </h2>
+
+
+                <p>
+                    Crie um formulário com campos para nome
+                    e e-mail e um botão de envio.
+                </p>
+
+
+                <div class="challenge-objective">
+
+                    <strong>
+                        🎯 Objetivo
+                    </strong>
+
+                    <p>
+                        Praticar
+                        <code>&lt;form&gt;</code>,
+                        <code>&lt;input&gt;</code> e
+                        <code>&lt;button&gt;</code>.
+                    </p>
+
+                </div>
+
+
+                <div class="challenge-tags">
+
+                    <span>
+                        HTML
+                    </span>
+
+                    <span>
+                        Formulário
+                    </span>
+
+                    <span>
+                        Input
+                    </span>
+
+                </div>
+
+
+                <a
+                    href="laboratorio.html?desafio=3"
+                    class="challenge-button">
+
+                    Começar desafio →
+
+                </a>
+
+            </article>
+
+
+            <!-- =========================
+                 DESAFIO 04
+            ========================== -->
+
+            <article
+                class="challenge-card"
+                data-difficulty="medio">
+
+                <div class="challenge-top">
+
+                    <span class="challenge-number">
+                        #04
+                    </span>
+
+                    <span class="difficulty medium">
+                        Médio
+                    </span>
+
+                </div>
+
+
+                <span class="challenge-type">
+                    HTML + CSS
+                </span>
+
+
+                <h2>
+                    Estilize seu cartão
+                </h2>
+
+
+                <p>
+                    Crie um cartão de apresentação e utilize
+                    CSS para alterar sua cor, tamanho,
+                    espaçamento e bordas.
+                </p>
+
+
+                <div class="challenge-objective">
+
+                    <strong>
+                        🎯 Objetivo
+                    </strong>
+
+                    <p>
+                        Praticar propriedades básicas
+                        do CSS.
+                    </p>
+
+                </div>
+
+
+                <div class="challenge-tags">
+
+                    <span>
+                        CSS
+                    </span>
+
+                    <span>
+                        Cores
+                    </span>
+
+                    <span>
+                        Border
+                    </span>
+
+                    <span>
+                        Padding
+                    </span>
+
+                </div>
+
+
+                <a
+                    href="laboratorio.html?desafio=4"
+                    class="challenge-button">
+
+                    Começar desafio →
+
+                </a>
+
+            </article>
+
+
+            <!-- =========================
+                 DESAFIO 05
+            ========================== -->
+
+            <article
+                class="challenge-card"
+                data-difficulty="medio">
+
+                <div class="challenge-top">
+
+                    <span class="challenge-number">
+                        #05
+                    </span>
+
+                    <span class="difficulty medium">
+                        Médio
+                    </span>
+
+                </div>
+
+
+                <span class="challenge-type">
+                    CSS
+                </span>
+
+
+                <h2>
+                    Organize elementos com Flexbox
+                </h2>
+
+
+                <p>
+                    Crie três elementos e utilize Flexbox
+                    para posicioná-los lado a lado e
+                    centralizá-los.
+                </p>
+
+
+                <div class="challenge-objective">
+
+                    <strong>
+                        🎯 Objetivo
+                    </strong>
+
+                    <p>
+                        Praticar
+                        <code>display: flex</code>,
+                        <code>justify-content</code> e
+                        <code>align-items</code>.
+                    </p>
+
+                </div>
+
+
+                <div class="challenge-tags">
+
+                    <span>
+                        CSS
+                    </span>
+
+                    <span>
+                        Flexbox
+                    </span>
+
+                    <span>
+                        Layout
+                    </span>
+
+                </div>
+
+
+                <a
+                    href="laboratorio.html?desafio=5"
+                    class="challenge-button">
+
+                    Começar desafio →
+
+                </a>
+
+            </article>
+
+
+            <!-- =========================
+                 DESAFIO 06
+            ========================== -->
+
+            <article
+                class="challenge-card"
+                data-difficulty="dificil">
+
+                <div class="challenge-top">
+
+                    <span class="challenge-number">
+                        #06
+                    </span>
+
+                    <span class="difficulty hard">
+                        Difícil
+                    </span>
+
+                </div>
+
+
+                <span class="challenge-type">
+                    HTML + CSS
+                </span>
+
+
+                <h2>
+                    Crie uma página completa
+                </h2>
+
+
+                <p>
+                    Desenvolva uma página contendo cabeçalho,
+                    menu, conteúdo principal, cards e rodapé.
+                </p>
+
+
+                <div class="challenge-objective">
+
+                    <strong>
+                        🎯 Objetivo
+                    </strong>
+
+                    <p>
+                        Utilizar HTML semântico e técnicas
+                        modernas de layout com CSS.
+                    </p>
+
+                </div>
+
+
+                <div class="challenge-tags">
+
+                    <span>
+                        HTML5
+                    </span>
+
+                    <span>
+                        CSS3
+                    </span>
+
+                    <span>
+                        Flexbox
+                    </span>
+
+                    <span>
+                        Grid
+                    </span>
+
+                </div>
+
+
+                <a
+                    href="laboratorio.html?desafio=6"
+                    class="challenge-button">
+
+                    Começar desafio →
+
+                </a>
+
+            </article>
+
+        </section>
+
+
+        <!-- =========================
+             MENSAGEM MOTIVACIONAL
+        ========================== -->
+
+        <section class="challenge-banner">
+
+            <div class="challenge-banner-icon">
+                🚀
+            </div>
+
+            <div>
+
+                <span class="section-label">
+                    CONTINUE EVOLUINDO
+                </span>
+
+                <h2>
+                    Todo programador começou
+                    escrevendo seu primeiro código.
+                </h2>
+
+                <p>
+                    Não se preocupe em acertar tudo de primeira.
+                    Pratique, erre, descubra o motivo e tente
+                    novamente.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             LABORATÓRIO
+        ========================== -->
+
+        <section class="learning-banner">
+
+            <div>
+
+                <span class="section-label">
+                    PRÓXIMO PASSO
+                </span>
+
+                <h2>
+                    Quer testar seu código?
+                </h2>
+
+                <p>
+                    Abra o laboratório e resolva os desafios
+                    diretamente no navegador.
+                </p>
+
+            </div>
+
+            <a
+                href="laboratorio.html"
+                class="primary-button">
+
+                Abrir laboratório →
+
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         RODAPÉ
+    ========================== -->
+
+    <footer class="footer">
+
+        <div class="footer-content">
+
+            <div>
+
+                <a
+                    href="index.html"
+                    class="logo">
+
+                    &lt;DevGuia /&gt;
+
+                </a>
+
+                <p>
+                    Aprendendo desenvolvimento web
+                    de forma simples e prática.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <a href="index.html">
+                    HTML
+                </a>
+
+                <a href="css.html">
+                    CSS
+                </a>
+
+                <a href="exemplos.html">
+                    Exemplos
+                </a>
+
+                <a href="laboratorio.html">
+                    Laboratório
+                </a>
+
+                <a href="desafios.html">
+                    Desafios
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 DevGuia. Projeto educacional.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="./js/script.js"></script>
+
+</body>
+
+</html>
+```

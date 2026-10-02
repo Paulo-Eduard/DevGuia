@@ -1,0 +1,1368 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="DevGuia CSS3 — aprenda seletores, propriedades, Flexbox, Grid, Box Model e responsividade.">
+
+    <title>DevGuia — CSS3</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         CABEÇALHO
+    ========================== -->
+
+    <header class="header">
+
+        <nav class="navbar">
+
+            <a href="index.html" class="logo">
+                &lt;DevGuia /&gt;
+            </a>
+
+            <ul class="nav-links">
+
+                <li>
+                    <a href="index.html">
+                        HTML
+                    </a>
+                </li>
+
+                <li>
+                    <a href="css.html" class="active">
+                        CSS
+                    </a>
+                </li>
+
+                <li>
+                    <a href="exemplos.html">
+                        Exemplos
+                    </a>
+                </li>
+
+                <li>
+                    <a href="laboratorio.html">
+                        Laboratório
+                    </a>
+                </li>
+
+                <li>
+                    <a href="desafios.html">
+                        Desafios
+                    </a>
+                </li>
+
+            </ul>
+
+            <button
+                class="menu-button"
+                aria-label="Abrir menu">
+
+                ☰
+
+            </button>
+
+        </nav>
+
+    </header>
+
+
+    <!-- =========================
+         CONTEÚDO PRINCIPAL
+    ========================== -->
+
+    <main>
+
+        <!-- =========================
+             HERO
+        ========================== -->
+
+        <section class="hero">
+
+            <span class="hero-badge css-hero-badge">
+                CSS3
+            </span>
+
+            <h1>
+                Dê estilo ao seu código
+                <span>com CSS.</span>
+            </h1>
+
+            <p>
+                Aprenda a criar layouts modernos, responsivos
+                e visualmente organizados.
+            </p>
+
+
+            <!-- BUSCA -->
+
+            <div class="search-box">
+
+                <span class="search-icon">
+                    🔎
+                </span>
+
+                <input
+                    type="search"
+                    id="cssSearchInput"
+                    placeholder="Pesquise uma propriedade, como flexbox ou color..."
+                    aria-label="Pesquisar propriedade CSS">
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             INTRODUÇÃO
+        ========================== -->
+
+        <section class="intro-section">
+
+            <div class="section-header">
+
+                <div>
+
+                    <span class="section-label">
+                        PRIMEIROS PASSOS
+                    </span>
+
+                    <h2>
+                        O que é CSS?
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="intro-card">
+
+                <div class="intro-icon">
+                    🎨
+                </div>
+
+                <div>
+
+                    <p>
+                        <strong>CSS</strong> significa
+                        <strong>Cascading Style Sheets</strong>,
+                        ou Folhas de Estilo em Cascata.
+                    </p>
+
+                    <p>
+                        Ele é utilizado para definir a aparência
+                        dos elementos HTML, controlando cores,
+                        fontes, tamanhos, espaçamentos, posições
+                        e layouts.
+                    </p>
+
+                    <div class="code-example">
+
+                        <pre><code>h1 {
+    color: #38bdf8;
+    font-size: 32px;
+}</code></pre>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             CATEGORIAS
+        ========================== -->
+
+        <section class="categories">
+
+            <div class="section-header">
+
+                <div>
+
+                    <span class="section-label">
+                        EXPLORAR
+                    </span>
+
+                    <h2>
+                        Conceitos CSS
+                    </h2>
+
+                </div>
+
+                <p>
+                    Escolha uma categoria para começar.
+                </p>
+
+            </div>
+
+
+            <div class="category-list">
+
+                <button
+                    class="category-button active"
+                    data-css-category="todos">
+
+                    Todos
+
+                </button>
+
+                <button
+                    class="category-button"
+                    data-css-category="seletores">
+
+                    Seletores
+
+                </button>
+
+                <button
+                    class="category-button"
+                    data-css-category="cores">
+
+                    Cores
+
+                </button>
+
+                <button
+                    class="category-button"
+                    data-css-category="texto">
+
+                    Texto
+
+                </button>
+
+                <button
+                    class="category-button"
+                    data-css-category="box-model">
+
+                    Box Model
+
+                </button>
+
+                <button
+                    class="category-button"
+                    data-css-category="flexbox">
+
+                    Flexbox
+
+                </button>
+
+                <button
+                    class="category-button"
+                    data-css-category="grid">
+
+                    Grid
+
+                </button>
+
+                <button
+                    class="category-button"
+                    data-css-category="responsivo">
+
+                    Responsividade
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             CONCEITOS
+        ========================== -->
+
+        <section class="css-concepts">
+
+
+            <!-- =========================
+                 SELETORES
+            ========================== -->
+
+            <article
+                class="css-card"
+                data-css-category="seletores">
+
+                <div class="css-card-header">
+
+                    <span class="css-number">
+                        01
+                    </span>
+
+                    <span class="css-category">
+                        Seletores
+                    </span>
+
+                </div>
+
+
+                <h2>
+                    Seletores CSS
+                </h2>
+
+
+                <p>
+                    Os seletores indicam quais elementos HTML
+                    receberão determinado estilo.
+                </p>
+
+
+                <div class="code-example">
+
+                    <div class="code-header">
+                        CSS
+                    </div>
+
+                    <pre><code>p {
+    color: white;
+}
+
+.titulo {
+    font-size: 32px;
+}
+
+#principal {
+    background: black;
+}</code></pre>
+
+                </div>
+
+
+                <div class="css-info">
+
+                    <div>
+                        <strong>
+                            Elemento
+                        </strong>
+
+                        <span>
+                            p
+                        </span>
+                    </div>
+
+                    <div>
+                        <strong>
+                            Classe
+                        </strong>
+
+                        <span>
+                            .titulo
+                        </span>
+                    </div>
+
+                    <div>
+                        <strong>
+                            ID
+                        </strong>
+
+                        <span>
+                            #principal
+                        </span>
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- =========================
+                 CORES
+            ========================== -->
+
+            <article
+                class="css-card"
+                data-css-category="cores">
+
+                <div class="css-card-header">
+
+                    <span class="css-number">
+                        02
+                    </span>
+
+                    <span class="css-category">
+                        Cores
+                    </span>
+
+                </div>
+
+
+                <h2>
+                    Cores
+                </h2>
+
+
+                <p>
+                    O CSS permite definir cores para textos,
+                    fundos, bordas e diversos outros elementos.
+                </p>
+
+
+                <div class="code-example">
+
+                    <div class="code-header">
+                        CSS
+                    </div>
+
+                    <pre><code>.card {
+    color: #ffffff;
+    background-color: #0f172a;
+    border-color: #38bdf8;
+}</code></pre>
+
+                </div>
+
+
+                <div class="color-demo">
+
+                    <div class="color-item">
+
+                        <span
+                            class="color-preview text-color-preview">
+                        </span>
+
+                        <span>
+                            color
+                        </span>
+
+                    </div>
+
+
+                    <div class="color-item">
+
+                        <span
+                            class="color-preview background-color-preview">
+                        </span>
+
+                        <span>
+                            background
+                        </span>
+
+                    </div>
+
+
+                    <div class="color-item">
+
+                        <span
+                            class="color-preview border-color-preview">
+                        </span>
+
+                        <span>
+                            border
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- =========================
+                 TIPOGRAFIA
+            ========================== -->
+
+            <article
+                class="css-card"
+                data-css-category="texto">
+
+                <div class="css-card-header">
+
+                    <span class="css-number">
+                        03
+                    </span>
+
+                    <span class="css-category">
+                        Texto
+                    </span>
+
+                </div>
+
+
+                <h2>
+                    Tipografia
+                </h2>
+
+
+                <p>
+                    Propriedades de texto permitem controlar
+                    fonte, tamanho, peso, alinhamento e
+                    espaçamento.
+                </p>
+
+
+                <div class="code-example">
+
+                    <div class="code-header">
+                        CSS
+                    </div>
+
+                    <pre><code>.titulo {
+    font-family: Arial, sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    text-align: center;
+    line-height: 1.2;
+}</code></pre>
+
+                </div>
+
+
+                <div class="text-demo">
+
+                    <h3>
+                        Texto estilizado
+                    </h3>
+
+                    <p>
+                        Esse é um exemplo de tipografia
+                        utilizando CSS.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <!-- =========================
+                 BOX MODEL
+            ========================== -->
+
+            <article
+                class="css-card"
+                data-css-category="box-model">
+
+                <div class="css-card-header">
+
+                    <span class="css-number">
+                        04
+                    </span>
+
+                    <span class="css-category">
+                        Box Model
+                    </span>
+
+                </div>
+
+
+                <h2>
+                    Box Model
+                </h2>
+
+
+                <p>
+                    Todo elemento HTML pode ser entendido como
+                    uma caixa formada por conteúdo, padding,
+                    border e margin.
+                </p>
+
+
+                <div class="code-example">
+
+                    <div class="code-header">
+                        CSS
+                    </div>
+
+                    <pre><code>.card {
+    width: 300px;
+    padding: 20px;
+    border: 2px solid;
+    margin: 20px;
+}</code></pre>
+
+                </div>
+
+
+                <div class="box-model-demo">
+
+                    <div class="margin-box">
+
+                        <span>
+                            margin
+                        </span>
+
+                        <div class="border-box">
+
+                            <span>
+                                border
+                            </span>
+
+                            <div class="padding-box">
+
+                                <span>
+                                    padding
+                                </span>
+
+                                <div class="content-box">
+
+                                    conteúdo
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- =========================
+                 FLEXBOX
+            ========================== -->
+
+            <article
+                class="css-card"
+                data-css-category="flexbox">
+
+                <div class="css-card-header">
+
+                    <span class="css-number">
+                        05
+                    </span>
+
+                    <span class="css-category">
+                        Layout
+                    </span>
+
+                </div>
+
+
+                <h2>
+                    Flexbox
+                </h2>
+
+
+                <p>
+                    Flexbox é utilizado principalmente para
+                    organizar elementos em uma dimensão,
+                    horizontal ou vertical.
+                </p>
+
+
+                <div class="code-example">
+
+                    <div class="code-header">
+                        CSS
+                    </div>
+
+                    <pre><code>.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}</code></pre>
+
+                </div>
+
+
+                <div class="flex-demo">
+
+                    <div>
+                        01
+                    </div>
+
+                    <div>
+                        02
+                    </div>
+
+                    <div>
+                        03
+                    </div>
+
+                </div>
+
+
+                <div class="property-list">
+
+                    <span>
+                        display: flex
+                    </span>
+
+                    <span>
+                        justify-content
+                    </span>
+
+                    <span>
+                        align-items
+                    </span>
+
+                    <span>
+                        gap
+                    </span>
+
+                </div>
+
+            </article>
+
+
+            <!-- =========================
+                 GRID
+            ========================== -->
+
+            <article
+                class="css-card"
+                data-css-category="grid">
+
+                <div class="css-card-header">
+
+                    <span class="css-number">
+                        06
+                    </span>
+
+                    <span class="css-category">
+                        Layout
+                    </span>
+
+                </div>
+
+
+                <h2>
+                    CSS Grid
+                </h2>
+
+
+                <p>
+                    Grid é ideal para criar layouts em duas
+                    dimensões, trabalhando simultaneamente
+                    com linhas e colunas.
+                </p>
+
+
+                <div class="code-example">
+
+                    <div class="code-header">
+                        CSS
+                    </div>
+
+                    <pre><code>.container {
+    display: grid;
+    grid-template-columns:
+        repeat(3, 1fr);
+    gap: 20px;
+}</code></pre>
+
+                </div>
+
+
+                <div class="grid-demo">
+
+                    <div>
+                        HTML
+                    </div>
+
+                    <div>
+                        CSS
+                    </div>
+
+                    <div>
+                        JavaScript
+                    </div>
+
+                    <div>
+                        React
+                    </div>
+
+                    <div>
+                        Python
+                    </div>
+
+                    <div>
+                        Git
+                    </div>
+
+                </div>
+
+
+                <div class="property-list">
+
+                    <span>
+                        display: grid
+                    </span>
+
+                    <span>
+                        grid-template-columns
+                    </span>
+
+                    <span>
+                        gap
+                    </span>
+
+                </div>
+
+            </article>
+
+
+            <!-- =========================
+                 POSICIONAMENTO
+            ========================== -->
+
+            <article
+                class="css-card"
+                data-css-category="box-model">
+
+                <div class="css-card-header">
+
+                    <span class="css-number">
+                        07
+                    </span>
+
+                    <span class="css-category">
+                        Posicionamento
+                    </span>
+
+                </div>
+
+
+                <h2>
+                    Position
+                </h2>
+
+
+                <p>
+                    A propriedade position permite controlar
+                    como um elemento será posicionado na página.
+                </p>
+
+
+                <div class="code-example">
+
+                    <div class="code-header">
+                        CSS
+                    </div>
+
+                    <pre><code>.elemento {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}</code></pre>
+
+                </div>
+
+
+                <div class="position-demo">
+
+                    <div class="position-parent">
+
+                        <span>
+                            container
+                        </span>
+
+                        <div class="position-element">
+                            position
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="property-list">
+
+                    <span>
+                        static
+                    </span>
+
+                    <span>
+                        relative
+                    </span>
+
+                    <span>
+                        absolute
+                    </span>
+
+                    <span>
+                        fixed
+                    </span>
+
+                    <span>
+                        sticky
+                    </span>
+
+                </div>
+
+            </article>
+
+
+            <!-- =========================
+                 RESPONSIVIDADE
+            ========================== -->
+
+            <article
+                class="css-card"
+                data-css-category="responsivo">
+
+                <div class="css-card-header">
+
+                    <span class="css-number">
+                        08
+                    </span>
+
+                    <span class="css-category">
+                        Responsividade
+                    </span>
+
+                </div>
+
+
+                <h2>
+                    Media Queries
+                </h2>
+
+
+                <p>
+                    Media Queries permitem adaptar o layout
+                    para diferentes tamanhos de tela.
+                </p>
+
+
+                <div class="code-example">
+
+                    <div class="code-header">
+                        CSS
+                    </div>
+
+                    <pre><code>@media (max-width: 768px) {
+
+    .container {
+        grid-template-columns: 1fr;
+    }
+
+}</code></pre>
+
+                </div>
+
+
+                <div class="responsive-demo">
+
+                    <div>
+                        Desktop
+                    </div>
+
+                    <div>
+                        Tablet
+                    </div>
+
+                    <div>
+                        Mobile
+                    </div>
+
+                </div>
+
+
+                <div class="tip-box">
+
+                    <strong>
+                        💡 Dica:
+                    </strong>
+
+                    <span>
+                        Sempre pense em como seu site será
+                        exibido em celulares, tablets e
+                        computadores.
+                    </span>
+
+                </div>
+
+            </article>
+
+
+            <!-- =========================
+                 VARIÁVEIS
+            ========================== -->
+
+            <article
+                class="css-card"
+                data-css-category="cores">
+
+                <div class="css-card-header">
+
+                    <span class="css-number">
+                        09
+                    </span>
+
+                    <span class="css-category">
+                        Organização
+                    </span>
+
+                </div>
+
+
+                <h2>
+                    Variáveis CSS
+                </h2>
+
+
+                <p>
+                    Variáveis permitem armazenar valores
+                    reutilizáveis, facilitando a manutenção
+                    do projeto.
+                </p>
+
+
+                <div class="code-example">
+
+                    <div class="code-header">
+                        CSS
+                    </div>
+
+                    <pre><code>:root {
+    --cor-principal: #38bdf8;
+    --fundo: #0f172a;
+    --texto: #f8fafc;
+}
+
+button {
+    background: var(--cor-principal);
+}</code></pre>
+
+                </div>
+
+
+                <div class="variables-demo">
+
+                    <div class="variable-color"></div>
+
+                    <div>
+
+                        <strong>
+                            --cor-principal
+                        </strong>
+
+                        <span>
+                            #38bdf8
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- =========================
+                 TRANSIÇÕES
+            ========================== -->
+
+            <article
+                class="css-card"
+                data-css-category="cores">
+
+                <div class="css-card-header">
+
+                    <span class="css-number">
+                        10
+                    </span>
+
+                    <span class="css-category">
+                        Efeitos
+                    </span>
+
+                </div>
+
+
+                <h2>
+                    Transições
+                </h2>
+
+
+                <p>
+                    Transições criam mudanças suaves quando
+                    uma propriedade CSS é alterada.
+                </p>
+
+
+                <div class="code-example">
+
+                    <div class="code-header">
+                        CSS
+                    </div>
+
+                    <pre><code>.button {
+    transition: 0.3s;
+}
+
+.button:hover {
+    transform: scale(1.05);
+}</code></pre>
+
+                </div>
+
+
+                <div class="transition-demo">
+
+                    <button>
+                        Passe o mouse
+                    </button>
+
+                </div>
+
+            </article>
+
+        </section>
+
+
+        <!-- =========================
+             BOAS PRÁTICAS
+        ========================== -->
+
+        <section class="best-practices">
+
+            <div class="section-header">
+
+                <div>
+
+                    <span class="section-label">
+                        DICAS
+                    </span>
+
+                    <h2>
+                        Boas práticas CSS
+                    </h2>
+
+                </div>
+
+                <p>
+                    Alguns hábitos ajudam a manter
+                    seu código organizado.
+                </p>
+
+            </div>
+
+
+            <div class="tips-grid">
+
+
+                <article class="tip-card">
+
+                    <span>
+                        01
+                    </span>
+
+                    <h3>
+                        Use classes
+                    </h3>
+
+                    <p>
+                        Prefira classes para estilos reutilizáveis
+                        em vez de depender excessivamente de IDs.
+                    </p>
+
+                </article>
+
+
+                <article class="tip-card">
+
+                    <span>
+                        02
+                    </span>
+
+                    <h3>
+                        Organize seu CSS
+                    </h3>
+
+                    <p>
+                        Mantenha propriedades relacionadas próximas
+                        e utilize uma estrutura consistente.
+                    </p>
+
+                </article>
+
+
+                <article class="tip-card">
+
+                    <span>
+                        03
+                    </span>
+
+                    <h3>
+                        Evite repetição
+                    </h3>
+
+                    <p>
+                        Utilize variáveis CSS e classes reutilizáveis
+                        para reduzir código duplicado.
+                    </p>
+
+                </article>
+
+
+                <article class="tip-card">
+
+                    <span>
+                        04
+                    </span>
+
+                    <h3>
+                        Pense responsivamente
+                    </h3>
+
+                    <p>
+                        Seu layout deve funcionar em diferentes
+                        tamanhos de tela.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             CHAMADA PARA EXEMPLOS
+        ========================== -->
+
+        <section class="learning-banner">
+
+            <div>
+
+                <span class="section-label">
+                    APRENDER NA PRÁTICA
+                </span>
+
+                <h2>
+                    Quer ver esses conceitos funcionando?
+                </h2>
+
+                <p>
+                    Confira exemplos práticos de HTML e CSS
+                    e veja o resultado visual de cada código.
+                </p>
+
+            </div>
+
+
+            <a
+                href="exemplos.html"
+                class="primary-button">
+
+                Ver exemplos →
+
+            </a>
+
+        </section>
+
+
+        <!-- =========================
+             CHAMADA PARA DESAFIOS
+        ========================== -->
+
+        <section class="learning-banner">
+
+            <div>
+
+                <span class="section-label">
+                    PRÓXIMO PASSO
+                </span>
+
+                <h2>
+                    Já entendeu? Agora pratique.
+                </h2>
+
+                <p>
+                    Resolva desafios e coloque seus conhecimentos
+                    de CSS em prática.
+                </p>
+
+            </div>
+
+
+            <a
+                href="desafios.html"
+                class="primary-button">
+
+                Ver desafios →
+
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         RODAPÉ
+    ========================== -->
+
+    <footer class="footer">
+
+        <div class="footer-content">
+
+            <div>
+
+                <a
+                    href="index.html"
+                    class="logo">
+
+                    &lt;DevGuia /&gt;
+
+                </a>
+
+                <p>
+                    Aprendendo desenvolvimento web
+                    de forma simples e prática.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <a href="index.html">
+                    HTML
+                </a>
+
+                <a href="css.html">
+                    CSS
+                </a>
+
+                <a href="exemplos.html">
+                    Exemplos
+                </a>
+
+                <a href="laboratorio.html">
+                    Laboratório
+                </a>
+
+                <a href="desafios.html">
+                    Desafios
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 DevGuia. Projeto educacional.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="./js/script.js"></script>
+
+</body>
+
+</html>
+```

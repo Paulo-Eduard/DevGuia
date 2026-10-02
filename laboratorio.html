@@ -1,0 +1,694 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="DevGuia — laboratório interativo para praticar HTML e CSS.">
+
+    <title>DevGuia — Laboratório</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         CABEÇALHO
+    ========================== -->
+
+    <header class="header">
+
+        <nav class="navbar">
+
+            <a href="index.html" class="logo">
+                &lt;DevGuia /&gt;
+            </a>
+
+            <ul class="nav-links">
+
+                <li>
+                    <a href="index.html">
+                        HTML
+                    </a>
+                </li>
+
+                <li>
+                    <a href="css.html">
+                        CSS
+                    </a>
+                </li>
+
+                <li>
+                    <a href="exemplos.html">
+                        Exemplos
+                    </a>
+                </li>
+
+                <li>
+                    <a href="laboratorio.html" class="active">
+                        Laboratório
+                    </a>
+                </li>
+
+                <li>
+                    <a href="desafios.html">
+                        Desafios
+                    </a>
+                </li>
+
+            </ul>
+
+            <button
+                class="menu-button"
+                aria-label="Abrir menu">
+
+                ☰
+
+            </button>
+
+        </nav>
+
+    </header>
+
+
+    <!-- =========================
+         CONTEÚDO PRINCIPAL
+    ========================== -->
+
+    <main class="laboratory-page">
+
+        <!-- =========================
+             HERO
+        ========================== -->
+
+        <section class="hero laboratory-hero">
+
+            <span class="hero-badge">
+                LABORATÓRIO
+            </span>
+
+            <h1>
+                Escreva.
+                <span>Execute.</span>
+                Aprenda.
+            </h1>
+
+            <p>
+                Experimente HTML e CSS diretamente no navegador
+                e veja suas alterações em tempo real.
+            </p>
+
+        </section>
+
+
+        <!-- =========================
+             DESAFIO ATUAL
+        ========================== -->
+
+        <section
+            class="current-challenge"
+            id="challengePanel">
+
+            <div class="challenge-info">
+
+                <div class="challenge-icon">
+                    🚀
+                </div>
+
+                <div>
+
+                    <span class="section-label">
+                        MODO PRÁTICA
+                    </span>
+
+                    <h2 id="challengeTitle">
+                        Laboratório livre
+                    </h2>
+
+                    <p id="challengeDescription">
+                        Escreva seu próprio código HTML e CSS
+                        e veja o resultado no painel ao lado.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <button
+                class="challenge-help-button"
+                id="challengeHelpButton">
+
+                💡 Ver instruções
+
+            </button>
+
+        </section>
+
+
+        <!-- =========================
+             BARRA DE FERRAMENTAS
+        ========================== -->
+
+        <section class="laboratory-toolbar">
+
+            <div class="toolbar-left">
+
+                <button
+                    class="tool-button active"
+                    id="htmlTab">
+
+                    HTML
+
+                </button>
+
+                <button
+                    class="tool-button"
+                    id="cssTab">
+
+                    CSS
+
+                </button>
+
+            </div>
+
+
+            <div class="toolbar-right">
+
+                <button
+                    class="tool-button"
+                    id="resetButton">
+
+                    ↻ Limpar
+
+                </button>
+
+                <button
+                    class="tool-button primary-tool-button"
+                    id="runButton">
+
+                    ▶ Executar
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             EDITOR
+        ========================== -->
+
+        <section class="laboratory">
+
+            <!-- EDITOR HTML -->
+
+            <div
+                class="editor-panel"
+                id="htmlEditorPanel">
+
+                <div class="editor-header">
+
+                    <div class="editor-title">
+
+                        <span class="file-icon html-file-icon">
+                            HTML
+                        </span>
+
+                        <span>
+                            index.html
+                        </span>
+
+                    </div>
+
+                    <span class="editor-status">
+                        Editável
+                    </span>
+
+                </div>
+
+
+                <div class="editor-wrapper">
+
+                    <div class="line-numbers" id="htmlLineNumbers">
+                        1
+                    </div>
+
+                    <textarea
+                        id="htmlCode"
+                        class="code-editor"
+                        spellcheck="false"
+                        autocomplete="off"
+                        autocorrect="off"
+                        autocapitalize="off"
+                        aria-label="Editor HTML"><div class="card">
+
+    <h1>Olá, DevGuia!</h1>
+
+    <p>
+        Este é meu primeiro código.
+    </p>
+
+    <button>
+        Clique aqui
+    </button>
+
+</div></textarea>
+
+                </div>
+
+            </div>
+
+
+            <!-- EDITOR CSS -->
+
+            <div
+                class="editor-panel css-editor-hidden"
+                id="cssEditorPanel">
+
+                <div class="editor-header">
+
+                    <div class="editor-title">
+
+                        <span class="file-icon css-file-icon">
+                            CSS
+                        </span>
+
+                        <span>
+                            style.css
+                        </span>
+
+                    </div>
+
+                    <span class="editor-status">
+                        Editável
+                    </span>
+
+                </div>
+
+
+                <div class="editor-wrapper">
+
+                    <div class="line-numbers" id="cssLineNumbers">
+                        1
+                    </div>
+
+                    <textarea
+                        id="cssCode"
+                        class="code-editor"
+                        spellcheck="false"
+                        autocomplete="off"
+                        autocorrect="off"
+                        autocapitalize="off"
+                        aria-label="Editor CSS">.card {
+
+    max-width: 400px;
+    margin: 40px auto;
+    padding: 30px;
+
+    background: #1e293b;
+
+    border: 1px solid #334155;
+    border-radius: 16px;
+
+    text-align: center;
+}
+
+.card h1 {
+
+    color: #38bdf8;
+
+}
+
+.card p {
+
+    color: #94a3b8;
+
+}
+
+.card button {
+
+    margin-top: 20px;
+    padding: 12px 20px;
+
+    background: #38bdf8;
+    color: #020617;
+
+    border: none;
+    border-radius: 8px;
+
+    cursor: pointer;
+
+}</textarea>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 PREVIEW
+            ========================== -->
+
+            <div class="preview-editor-panel">
+
+                <div class="editor-header">
+
+                    <div class="editor-title">
+
+                        <span class="file-icon preview-file-icon">
+                            ▶
+                        </span>
+
+                        <span>
+                            Resultado
+                        </span>
+
+                    </div>
+
+                    <div class="preview-actions">
+
+                        <button
+                            class="preview-action"
+                            id="refreshPreview"
+                            aria-label="Atualizar resultado">
+
+                            ↻
+
+                        </button>
+
+                        <button
+                            class="preview-action"
+                            id="fullscreenPreview"
+                            aria-label="Tela cheia">
+
+                            ⛶
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="preview-wrapper">
+
+                    <iframe
+                        id="preview"
+                        title="Resultado do código"
+                        sandbox="allow-scripts">
+
+                    </iframe>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             STATUS
+        ========================== -->
+
+        <section class="editor-status-bar">
+
+            <div>
+
+                <span class="status-indicator"></span>
+
+                <span id="statusText">
+                    Pronto para executar
+                </span>
+
+            </div>
+
+            <span>
+                HTML + CSS
+            </span>
+
+        </section>
+
+
+        <!-- =========================
+             INSTRUÇÕES
+        ========================== -->
+
+        <section
+            class="laboratory-instructions"
+            id="instructions">
+
+            <div class="section-header">
+
+                <div>
+
+                    <span class="section-label">
+                        COMO FUNCIONA
+                    </span>
+
+                    <h2>
+                        Seu primeiro laboratório
+                    </h2>
+
+                </div>
+
+                <p>
+                    Siga estes passos para começar.
+                </p>
+
+            </div>
+
+
+            <div class="instruction-grid">
+
+
+                <article class="instruction-card">
+
+                    <span class="instruction-number">
+                        01
+                    </span>
+
+                    <h3>
+                        Escreva HTML
+                    </h3>
+
+                    <p>
+                        Crie a estrutura da sua página utilizando
+                        elementos como títulos, parágrafos,
+                        imagens e botões.
+                    </p>
+
+                </article>
+
+
+                <article class="instruction-card">
+
+                    <span class="instruction-number">
+                        02
+                    </span>
+
+                    <h3>
+                        Estilize com CSS
+                    </h3>
+
+                    <p>
+                        Utilize cores, espaçamentos, fontes,
+                        Flexbox e outras propriedades para
+                        personalizar seu projeto.
+                    </p>
+
+                </article>
+
+
+                <article class="instruction-card">
+
+                    <span class="instruction-number">
+                        03
+                    </span>
+
+                    <h3>
+                        Execute
+                    </h3>
+
+                    <p>
+                        Clique em executar e veja o resultado
+                        do seu código no painel de visualização.
+                    </p>
+
+                </article>
+
+
+                <article class="instruction-card">
+
+                    <span class="instruction-number">
+                        04
+                    </span>
+
+                    <h3>
+                        Experimente
+                    </h3>
+
+                    <p>
+                        Altere o código, teste novas propriedades
+                        e descubra o que acontece.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             DICAS
+        ========================== -->
+
+        <section class="laboratory-tips">
+
+            <div class="tip-box">
+
+                <strong>
+                    💡 Dica:
+                </strong>
+
+                <span>
+                    Não tenha medo de modificar o código.
+                    O laboratório foi feito justamente para
+                    você experimentar e aprender com os erros.
+                </span>
+
+            </div>
+
+
+            <div class="tip-box">
+
+                <strong>
+                    ⚡ Atalho:
+                </strong>
+
+                <span>
+                    Use o botão "Executar" sempre que quiser
+                    atualizar o resultado do seu código.
+                </span>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             DESAFIOS
+        ========================== -->
+
+        <section class="learning-banner">
+
+            <div>
+
+                <span class="section-label">
+                    PRÓXIMO PASSO
+                </span>
+
+                <h2>
+                    Já dominou o laboratório?
+                </h2>
+
+                <p>
+                    Agora tente resolver desafios sem copiar
+                    os exemplos prontos.
+                </p>
+
+            </div>
+
+
+            <a
+                href="desafios.html"
+                class="primary-button">
+
+                Ver desafios →
+
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         RODAPÉ
+    ========================== -->
+
+    <footer class="footer">
+
+        <div class="footer-content">
+
+            <div>
+
+                <a
+                    href="index.html"
+                    class="logo">
+
+                    &lt;DevGuia /&gt;
+
+                </a>
+
+                <p>
+                    Aprendendo desenvolvimento web
+                    de forma simples e prática.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <a href="index.html">
+                    HTML
+                </a>
+
+                <a href="css.html">
+                    CSS
+                </a>
+
+                <a href="exemplos.html">
+                    Exemplos
+                </a>
+
+                <a href="laboratorio.html">
+                    Laboratório
+                </a>
+
+                <a href="desafios.html">
+                    Desafios
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 DevGuia. Projeto educacional.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script src="./js/script.js"></script>
+
+</body>
+
+</html>

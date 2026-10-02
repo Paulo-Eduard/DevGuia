@@ -1,0 +1,874 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="DevGuia — exemplos práticos de HTML e CSS para aprender desenvolvimento web.">
+
+    <title>DevGuia — Exemplos Práticos</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         CABEÇALHO
+    ========================== -->
+
+    <header class="header">
+
+        <nav class="navbar">
+
+            <a href="index.html" class="logo">
+                &lt;DevGuia /&gt;
+            </a>
+
+            <ul class="nav-links">
+
+                <li>
+                    <a href="index.html">
+                        HTML
+                    </a>
+                </li>
+
+                <li>
+                    <a href="css.html">
+                        CSS
+                    </a>
+                </li>
+
+                <li>
+                    <a href="exemplos.html" class="active">
+                        Exemplos
+                    </a>
+                </li>
+
+                <li>
+                    <a href="laboratorio.html">
+                        Laboratório
+                    </a>
+                </li>
+
+                <li>
+                    <a href="desafios.html">
+                        Desafios
+                    </a>
+                </li>
+
+            </ul>
+
+            <button class="menu-button" aria-label="Abrir menu">
+                ☰
+            </button>
+
+        </nav>
+
+    </header>
+
+
+    <!-- =========================
+         CONTEÚDO PRINCIPAL
+    ========================== -->
+
+    <main>
+
+        <!-- HERO -->
+
+        <section class="hero">
+
+            <span class="hero-badge">
+                EXEMPLOS PRÁTICOS
+            </span>
+
+            <h1>
+                Aprenda vendo o
+                <span>código funcionando.</span>
+            </h1>
+
+            <p>
+                Veja exemplos simples de HTML e CSS e entenda
+                como cada elemento funciona na prática.
+            </p>
+
+        </section>
+
+
+        <!-- =========================
+             FILTROS
+        ========================== -->
+
+        <section class="categories">
+
+            <div class="section-header">
+
+                <div>
+
+                    <span class="section-label">
+                        EXPLORAR
+                    </span>
+
+                    <h2>
+                        Exemplos
+                    </h2>
+
+                </div>
+
+                <p>
+                    Escolha um tipo de exemplo para começar.
+                </p>
+
+            </div>
+
+
+            <div class="category-list">
+
+                <button
+                    class="category-button active"
+                    data-example="todos">
+                    Todos
+                </button>
+
+                <button
+                    class="category-button"
+                    data-example="html">
+                    HTML
+                </button>
+
+                <button
+                    class="category-button"
+                    data-example="css">
+                    CSS
+                </button>
+
+                <button
+                    class="category-button"
+                    data-example="layout">
+                    Layout
+                </button>
+
+                <button
+                    class="category-button"
+                    data-example="formularios">
+                    Formulários
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             EXEMPLOS
+        ========================== -->
+
+        <section class="examples-section">
+
+
+            <!-- =========================
+                 EXEMPLO 01
+            ========================== -->
+
+            <article
+                class="example-card"
+                data-example-type="html">
+
+                <div class="example-header">
+
+                    <div>
+
+                        <span class="example-number">
+                            EXEMPLO 01
+                        </span>
+
+                        <h2>
+                            Estrutura básica de uma página
+                        </h2>
+
+                    </div>
+
+                    <span class="example-badge html-badge">
+                        HTML
+                    </span>
+
+                </div>
+
+
+                <p class="example-description">
+                    Toda página HTML começa com uma estrutura
+                    básica. Ela define informações do documento,
+                    título e conteúdo que será exibido.
+                </p>
+
+
+                <div class="example-content">
+
+                    <div class="code-panel">
+
+                        <div class="code-panel-header">
+
+                            <span>
+                                HTML
+                            </span>
+
+                            <button class="copy-button">
+                                Copiar
+                            </button>
+
+                        </div>
+
+                        <pre><code>&lt;!DOCTYPE html&gt;
+
+&lt;html lang="pt-BR"&gt;
+
+&lt;head&gt;
+    &lt;title&gt;Meu Site&lt;/title&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+    &lt;h1&gt;Olá, mundo!&lt;/h1&gt;
+
+    &lt;p&gt;
+        Meu primeiro site.
+    &lt;/p&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;</code></pre>
+
+                    </div>
+
+
+                    <div class="preview-panel">
+
+                        <div class="preview-header">
+                            Resultado
+                        </div>
+
+                        <div class="preview-content">
+
+                            <h1>
+                                Olá, mundo!
+                            </h1>
+
+                            <p>
+                                Meu primeiro site.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- =========================
+                 EXEMPLO 02
+            ========================== -->
+
+            <article
+                class="example-card"
+                data-example-type="html">
+
+                <div class="example-header">
+
+                    <div>
+
+                        <span class="example-number">
+                            EXEMPLO 02
+                        </span>
+
+                        <h2>
+                            Títulos e parágrafos
+                        </h2>
+
+                    </div>
+
+                    <span class="example-badge html-badge">
+                        HTML
+                    </span>
+
+                </div>
+
+
+                <p class="example-description">
+                    Os elementos de título organizam a hierarquia
+                    do conteúdo. O elemento <strong>h1</strong>
+                    representa o título principal.
+                </p>
+
+
+                <div class="example-content">
+
+                    <div class="code-panel">
+
+                        <div class="code-panel-header">
+
+                            <span>
+                                HTML
+                            </span>
+
+                            <button class="copy-button">
+                                Copiar
+                            </button>
+
+                        </div>
+
+                        <pre><code>&lt;h1&gt;
+    Desenvolvimento Web
+&lt;/h1&gt;
+
+&lt;h2&gt;
+    HTML
+&lt;/h2&gt;
+
+&lt;p&gt;
+    HTML cria a estrutura
+    das páginas web.
+&lt;/p&gt;</code></pre>
+
+                    </div>
+
+
+                    <div class="preview-panel">
+
+                        <div class="preview-header">
+                            Resultado
+                        </div>
+
+                        <div class="preview-content">
+
+                            <h1>
+                                Desenvolvimento Web
+                            </h1>
+
+                            <h2>
+                                HTML
+                            </h2>
+
+                            <p>
+                                HTML cria a estrutura
+                                das páginas web.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- =========================
+                 EXEMPLO 03
+            ========================== -->
+
+            <article
+                class="example-card"
+                data-example-type="css">
+
+                <div class="example-header">
+
+                    <div>
+
+                        <span class="example-number">
+                            EXEMPLO 03
+                        </span>
+
+                        <h2>
+                            Alterando cores com CSS
+                        </h2>
+
+                    </div>
+
+                    <span class="example-badge css-badge">
+                        CSS
+                    </span>
+
+                </div>
+
+
+                <p class="example-description">
+                    O CSS permite modificar cores, fontes,
+                    espaçamentos e diversos outros aspectos
+                    visuais dos elementos HTML.
+                </p>
+
+
+                <div class="example-content">
+
+                    <div class="code-panel">
+
+                        <div class="code-panel-header">
+
+                            <span>
+                                HTML + CSS
+                            </span>
+
+                            <button class="copy-button">
+                                Copiar
+                            </button>
+
+                        </div>
+
+                        <pre><code>&lt;h1 class="titulo"&gt;
+    Olá, DevGuia!
+&lt;/h1&gt;
+
+&lt;style&gt;
+
+.titulo {
+    color: #38bdf8;
+    background: #0f172a;
+    padding: 20px;
+}
+
+&lt;/style&gt;</code></pre>
+
+                    </div>
+
+
+                    <div class="preview-panel">
+
+                        <div class="preview-header">
+                            Resultado
+                        </div>
+
+                        <div class="preview-content">
+
+                            <h1 class="demo-title">
+                                Olá, DevGuia!
+                            </h1>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- =========================
+                 EXEMPLO 04
+            ========================== -->
+
+            <article
+                class="example-card"
+                data-example-type="layout">
+
+                <div class="example-header">
+
+                    <div>
+
+                        <span class="example-number">
+                            EXEMPLO 04
+                        </span>
+
+                        <h2>
+                            Criando um layout com Flexbox
+                        </h2>
+
+                    </div>
+
+                    <span class="example-badge css-badge">
+                        CSS
+                    </span>
+
+                </div>
+
+
+                <p class="example-description">
+                    O Flexbox facilita o alinhamento e a
+                    distribuição de elementos dentro de um
+                    container.
+                </p>
+
+
+                <div class="example-content">
+
+                    <div class="code-panel">
+
+                        <div class="code-panel-header">
+
+                            <span>
+                                CSS
+                            </span>
+
+                            <button class="copy-button">
+                                Copiar
+                            </button>
+
+                        </div>
+
+                        <pre><code>.container {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 15px;
+
+}</code></pre>
+
+                    </div>
+
+
+                    <div class="preview-panel">
+
+                        <div class="preview-header">
+                            Resultado
+                        </div>
+
+                        <div class="preview-content">
+
+                            <div class="flex-demo">
+
+                                <div>
+                                    1
+                                </div>
+
+                                <div>
+                                    2
+                                </div>
+
+                                <div>
+                                    3
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- =========================
+                 EXEMPLO 05
+            ========================== -->
+
+            <article
+                class="example-card"
+                data-example-type="layout">
+
+                <div class="example-header">
+
+                    <div>
+
+                        <span class="example-number">
+                            EXEMPLO 05
+                        </span>
+
+                        <h2>
+                            Criando cards com Grid
+                        </h2>
+
+                    </div>
+
+                    <span class="example-badge css-badge">
+                        CSS
+                    </span>
+
+                </div>
+
+
+                <p class="example-description">
+                    O CSS Grid permite organizar elementos
+                    em linhas e colunas, sendo muito útil
+                    para criar galerias e dashboards.
+                </p>
+
+
+                <div class="example-content">
+
+                    <div class="code-panel">
+
+                        <div class="code-panel-header">
+
+                            <span>
+                                CSS
+                            </span>
+
+                            <button class="copy-button">
+                                Copiar
+                            </button>
+
+                        </div>
+
+                        <pre><code>.cards {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+
+}</code></pre>
+
+                    </div>
+
+
+                    <div class="preview-panel">
+
+                        <div class="preview-header">
+                            Resultado
+                        </div>
+
+                        <div class="preview-content">
+
+                            <div class="grid-demo">
+
+                                <div>
+                                    HTML
+                                </div>
+
+                                <div>
+                                    CSS
+                                </div>
+
+                                <div>
+                                    JavaScript
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- =========================
+                 EXEMPLO 06
+            ========================== -->
+
+            <article
+                class="example-card"
+                data-example-type="formularios">
+
+                <div class="example-header">
+
+                    <div>
+
+                        <span class="example-number">
+                            EXEMPLO 06
+                        </span>
+
+                        <h2>
+                            Formulário de cadastro
+                        </h2>
+
+                    </div>
+
+                    <span class="example-badge html-badge">
+                        HTML
+                    </span>
+
+                </div>
+
+
+                <p class="example-description">
+                    Formulários permitem receber informações
+                    do usuário através de campos como nome,
+                    e-mail e senha.
+                </p>
+
+
+                <div class="example-content">
+
+                    <div class="code-panel">
+
+                        <div class="code-panel-header">
+
+                            <span>
+                                HTML
+                            </span>
+
+                            <button class="copy-button">
+                                Copiar
+                            </button>
+
+                        </div>
+
+                        <pre><code>&lt;form&gt;
+
+    &lt;label&gt;
+        Nome
+    &lt;/label&gt;
+
+    &lt;input
+        type="text"
+        placeholder="Digite seu nome"
+    &gt;
+
+    &lt;button&gt;
+        Cadastrar
+    &lt;/button&gt;
+
+&lt;/form&gt;</code></pre>
+
+                    </div>
+
+
+                    <div class="preview-panel">
+
+                        <div class="preview-header">
+                            Resultado
+                        </div>
+
+                        <div class="preview-content">
+
+                            <form class="demo-form">
+
+                                <label>
+                                    Nome
+                                </label>
+
+                                <input
+                                    type="text"
+                                    placeholder="Digite seu nome"
+                                >
+
+                                <button type="button">
+                                    Cadastrar
+                                </button>
+
+                            </form>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+        </section>
+
+
+        <!-- =========================
+             CHAMADA PARA LABORATÓRIO
+        ========================== -->
+
+        <section class="learning-banner">
+
+            <div>
+
+                <span class="section-label">
+                    QUER PRATICAR?
+                </span>
+
+                <h2>
+                    Agora é sua vez de escrever código.
+                </h2>
+
+                <p>
+                    Abra o laboratório e experimente
+                    seus próprios códigos HTML e CSS.
+                </p>
+
+            </div>
+
+            <a
+                href="laboratorio.html"
+                class="primary-button">
+
+                Abrir laboratório →
+
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         RODAPÉ
+    ========================== -->
+
+    <footer class="footer">
+
+        <div class="footer-content">
+
+            <div>
+
+                <a
+                    href="index.html"
+                    class="logo">
+
+                    &lt;DevGuia /&gt;
+
+                </a>
+
+                <p>
+                    Aprendendo desenvolvimento web
+                    de forma simples e prática.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <a href="index.html">
+                    HTML
+                </a>
+
+                <a href="css.html">
+                    CSS
+                </a>
+
+                <a href="exemplos.html">
+                    Exemplos
+                </a>
+
+                <a href="laboratorio.html">
+                    Laboratório
+                </a>
+
+                <a href="desafios.html">
+                    Desafios
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 DevGuia. Projeto educacional.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="./js/script.js"></script>
+
+</body>
+
+</html>
+```
